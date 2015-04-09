@@ -9,6 +9,9 @@ script: >
   addCodeTable('../static/purpose.json', 'purpose-types',
     [ { key: 'purposeCode', header: 'Code'},
       { key: 'purposeName', header: 'Description' } ]);
+  addCodeTable('../static/county.json', 'county-types',
+    [ { key: 'countyCode', header: 'Code'},
+      { key: 'countyName', header: 'Name' } ]);
 ---
 <body id="codes">
 
@@ -55,3 +58,22 @@ Download the JSON for this table <a href="../static/businessTypes.json">here</a>
 </body>
 <p>
 Download the JSON for this table <a href="../static/purpose.json">here</a>
+
+<a name="countyTypes"></a>
+
+<h5>Codes for County (FIeld Reference: county)</h5>
+
+<table id="county-types" class="field-table">
+	<colgroup>
+		<col span="1" style="width: 15%;">
+		<col span="1" style="width: 85%;">
+		<!-- <col span="1" style="width: 15.75%;"> -->
+	</colgroup>
+<thead>
+</thead>
+<tbody>
+</tbody>
+</table>
+</body>
+<p>
+Download the JSON for this table <a href="../static/county.json">here</a>
