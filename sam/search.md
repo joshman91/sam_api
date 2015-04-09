@@ -6,9 +6,7 @@ layout: default
 
 ### SAM Search API
 
-**NOTE: All the documentation on this page refers to the October release of the SAM API**
-
-As of November 2014, the SAM Search API has been developed to mimic the Search functionality that is currently available from the SAM website.
+The SAM Search API has been developed to mimic the Search functionality that is currently available from the SAM website.
 The Search API provides the opportunity to perform a search transaction in the following two options. Quick Search takes a single search term provided by the user and compares it to a set of predefined database fields. Advanced Search allows the user to search by entering a value that is then used to search a user selected predefined search category. 
 
 Notice that we are implementing this through a JSON-based “hypermedia as the engine of application state” (HATEOAS with the appropriate links object within the result set). The intent going forward will be to use this model to allow for a scalable architecture of IAE’s APIs to be built. 
@@ -421,9 +419,9 @@ There are certain tips to note in order to construct an API search URL properly.
 
 3) There should only be one space (space = +) between each term and in between “AND” and “OR” 
 
-4) Quick Search does not allow grouping
+4) Quick Search does not allow grouping however, advanced search allows for grouping
 
-5) When searching on samAddress.country, it can be entered as either a 2- or 3-character ISO-3166 codes.
+5) When searching on samAddress.country, it can be entered as either a 2- or 3-character ISO-3166 codes however 3-character ISO-3166 codes will be returned.
 
 
 
