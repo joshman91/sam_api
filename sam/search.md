@@ -427,6 +427,4 @@ There are certain tips to note in order to construct an API search URL properly.
 
 
 
-Example:
 
-* [https://api.data.gov/sam/v1/registrations?qterms=legalBusinessName:technology+OR+samAddress.country:XYZ&api_key=DEMO_KEY](https://api.data.gov/sam/v1/registrations?qterms=legalBusinessName:technology+OR+samAddress.country:XYZ&api_key=DEMO_KEY)
