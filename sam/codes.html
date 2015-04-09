@@ -18,6 +18,12 @@ script: >
   addCodeTable('../static/county.json', 'county-types',
     [ { key: 'countyCode', header: 'Code'},
       { key: 'countyName', header: 'Name' } ]);
+  addCodeTable('../static/far.json', 'far-types',
+    [ { key: 'farId', header: 'FAR ID'},
+      { key: 'farDescription', header: 'Description' } ]);
+  addCodeTable('../static/dfar.json', 'dfar-types',
+    [ { key: 'dfarId', header: 'DFAR ID'},
+      { key: 'dfarDescription', header: 'Description' } ]);
 ---
 <body id="codes">
 
@@ -28,6 +34,8 @@ script: >
 <a href="#countryTypes">Country Codes</a></br>
 <a href="#msaTypes">Metropolitan Statistical Area Codes</a></br>
 <a href="#countyTypes">County Codes</a></br>
+<a href="#farTypes">ID for FAR Responses</a></br>
+<a href="#dfarTypes">ID for DFAR Responses</a></br>
 
 <a name="businessTypes"></a>
 
@@ -127,3 +135,41 @@ Download the JSON for this table <a href="../static/msa.json">here</a>
 </body>
 <p>
 Download the JSON for this table <a href="../static/county.json">here</a>
+
+<a name="farTypes"></a>
+
+<h5>ID for FAR Responses (FIeld Reference: farResponses)</h5>
+
+<table id="far-types" class="field-table">
+	<colgroup>
+		<col span="1" style="width: 15%;">
+		<col span="1" style="width: 85%;">
+		<!-- <col span="1" style="width: 15.75%;"> -->
+	</colgroup>
+<thead>
+</thead>
+<tbody>
+</tbody>
+</table>
+</body>
+<p>
+Download the JSON for this table <a href="../static/far.json">here</a>
+
+<a name="dfarTypes"></a>
+
+<h5>ID for DFAR Responses (FIeld Reference: dfarResponses)</h5>
+
+<table id="dfar-types" class="field-table">
+	<colgroup>
+		<col span="1" style="width: 15%;">
+		<col span="1" style="width: 85%;">
+		<!-- <col span="1" style="width: 15.75%;"> -->
+	</colgroup>
+<thead>
+</thead>
+<tbody>
+</tbody>
+</table>
+</body>
+<p>
+Download the JSON for this table <a href="../static/dfar.json">here</a>
