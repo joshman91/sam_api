@@ -415,25 +415,17 @@ Exception:
 
 There are certain tips to note in order to construct an API search URL properly. We have listed several below. If you discover others as you work with our API, please add them to the ‘Feedback’ section of this GitHub site.
 
-1) Any query terms with special characters must include double quotes: q= “ZY’Z”
-	Note:  %26 can be used for ampersand ‘&’
+1) You can now search for a special character without using double quotes.
 
-2) Commas must be omitted from search terms
+2) Commas must be omitted from search terms 
 
-3) Boolean based search fields must be grouped together at the front of a URL:
+3) There should only be one space (‘+’) between each term and in between “AND” and “OR”
 
-Note: If your search includes 'Disaster Response Contractor', the disasterResponse search field must be the last Boolean search field in the group  
-  
-Example: qterms=womanOwnedBusiness:true+AND+sba8AProgram:
-true+AND+disasterResponse:true+AND+legalBusinessName:cats
+4) Quick Search does not allow grouping
 
-4) There should only be one space (‘+’) between each term and in between “AND” and “OR”
+5) When searching on samAddress.country, it can be entered as either a 2- or 3-character ISO-3166 codes.
 
-5) Quick Search does not allow grouping
 
-6) When searching on samAddress.country, it can be entered as either a 2- or 3-character ISO-3166 codes.
-
-7) When grouping Legal Business Name and Country in an advanced search, the term legalBusinessName must come before samAddress.country.
 
 Example:
 
