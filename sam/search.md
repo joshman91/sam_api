@@ -419,7 +419,7 @@ There are certain tips to note in order to construct an API search URL properly.
 
 2) Commas must be omitted from search terms 
 
-3) There should only be one space (‘+’) between each term and in between “AND” and “OR”
+3) There should only be one space (space = +) between each term and in between “AND” and “OR” 
 
 4) Quick Search does not allow grouping
 
