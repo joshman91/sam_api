@@ -4,15 +4,20 @@ title: Field Reference SAM API v3
 nav: fields3
 ---
 
+<h3>Field reference for public SAM API v3 </h3>
+<p>The fields listed here match up to the SAM data as defined in the public data extract available on <a href="http://www.sam.gov/">SAM</a>. The documentation for the extract is available on the openIAE site <a href="https://github.com/GSA/IAE-Architecture/blob/master/as-is/tech-docs/SAM/SAMWebServicesExtractsMappingsv1.0/SAM%20Master%20Web%20Services%20Mapping%20v1.0%20Public.xlsx">here</a>. There are a few fields like the NAICS code which have been broken out into objects or arrays. The documentation will be updated to provide more information about how to expect those codes to be sent to the user, but most of the fields are one-to-one mapped from the public extract file. </p>
+<p>We are working on improving access to the information on SAM. If you are directly integrating with SAM and need information about this or other interfaces into SAM, you can go to <a href="https://interact.gsa.gov/">Interact</a>, sign up, and then contact the your Change Control Board member to get access to the SAM Interfaces and Extracts Working Group forum. </p>
+<p>&nbsp;</p>
+
 	<TABLE CELLSPACING="0" COLS="3" BORDER="0">
 	<COLGROUP WIDTH="149"></COLGROUP>
 	<COLGROUP WIDTH="87"></COLGROUP>
 	<COLGROUP WIDTH="303"></COLGROUP>
 	<TR>
-		<TD STYLE="border-bottom: 1px solid #000000" COLSPAN=3 HEIGHT="25" ALIGN="CENTER" VALIGN=TOP BGCOLOR="#984807"><FONT SIZE=4 COLOR="#FFFFFF">Field References</FONT></TD>
+		<TD STYLE="border-bottom: 1px solid #000000" COLSPAN=3 HEIGHT="25" ALIGN="CENTER" VALIGN=TOP BGCOLOR="#984807"><FONT SIZE=4 COLOR="#FFFFFF">Field References SAM API v3</FONT></TD>
 		</TR>
 	<TR>
-		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000" COLSPAN=3 HEIGHT="20" ALIGN="CENTER" VALIGN=TOP BGCOLOR="#E46C0A"><U><A HREF="http://gsa.github.io/sam_api/sam/fields.html">http://gsa.github.io/sam_api/sam/fields.html</A></U></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000" COLSPAN=3 HEIGHT="20" ALIGN="CENTER" VALIGN=TOP BGCOLOR="#E46C0A"><U><A HREF="http://gsa.github.io/sam_api/sam/fields3.html">http://gsa.github.io/sam_api/sam/fields3.html</A></U></TD>
 		</TR>
 	<TR>
 		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="20" ALIGN="LEFT" VALIGN=TOP BGCOLOR="#FAC090"><B>Field Name:</B></TD>
@@ -585,3 +590,16 @@ nav: fields3
 		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Times New Roman" COLOR="#000000">The 4 digit ZIP +4 add on codes for th entity/contact</FONT></TD>
 	</TR>
 </TABLE>
+
+<H4>Common RESTful API Objects</H4>
+<A name="addressObject"></A>
+<H5>Address Object</H5>
+An address is represented by a JSON object with a structure as follows:
+<PRE>{    "line1": "1800 F St NW",    "line2": "IAE Offices",    "city": "Washington",    "stateOrProvince": "DC",    "zip": "20504",    "zip4": "0000",    "countryCode": "USA"  }  </PRE>
+<p>Note that city and zip4 are optional.  
+<p>The countryCode is a 3-digit code based on the GENC standard which is derived from ISO-3166-1 alpha-3 code. In March, the SAM API v2 will also include West Bank, Gaza Strip and Kosovo in the country codes. <A name="pocObject"></A>
+<H5>Point of Contact Object</H5>
+A point of contact object references an individual that is tied to a SAM registration for a particular purpose (e.g., a government point of contact, a point of contact dedicated to past performance reporting, etc.). A point of contact is represented by an object wth a structure as follows:
+<PRE>{    "firstName": "John",    "middleInitial": "Z",    "lastName": "Smith",    "address": { -- address object -- }    "usPhone": "555-555-5555",    "usPhoneExt": "000",    "nonUsPhone": "105055555555",    "nonUsPhoneExt": "000",    "email": "example@example.com"  }  </PRE>
+Note that only firstName, lastName, email and one phone number is required.
+<p>&nbsp;</p>
