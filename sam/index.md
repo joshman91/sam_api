@@ -3,6 +3,8 @@ published: true
 layout: default
 
 ---
+####Updated on June 26, 2015
+The SAM API has a release of v3 of the standard API and release of v2 of the [search](search.html) API.  The updated field references can be found [here](fields3.html).  Another new page which contains a better overview of the changes can be found in our [Versioning](versioning.html) document.
 
 ### Overview
 
