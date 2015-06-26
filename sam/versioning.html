@@ -1,16 +1,12 @@
---- 
+---
 layout: default 
 title: SAM API Versioning 
 nav: versioning 
---- 
-
+---
 
 <p>SAM API  Versioning<br />
   </p>
-<p>Background</p>
-<p>The SAM API is a  RESTful method of retrieving public information about the businesses or  individuals (referred to as &ldquo;entities&rdquo;) within the SAM data set. The entities  publicly available data set can currently be retrieved on an entity-by-entity  basis. The initial SAM API release was introduced in June 2014 and allowed  users of the API to retrieve publicly available entity data. The next iteration  of the API, released in fall 2014, provided the ability to search SAM to find  an entity based on the search criteria submitted. <br />
-  In  addition to the entity information, we also provide status and progress  information. This information is also included as part of the front end feature  for the SAM Status Tracker. The status refers to the status of the entity&rsquo;s  registration - whether they are working on their registration, waiting for a  validation from the IRS or the DoD (CAGE), or are active, as an example. The  progress is most relevant for those who are working on their registration; it  indicates whether a user has finished filling out different sections of their  registrations, as well as the progress of their validations with external  organizations such as the IRS or DoD. This should indicate how far along in the  process a user is in completing the work they need to do in order to successful  be registered in SAM.<br />
-Access  to the SAM API is administered through the API.Data.Gov which is an API  management service federal agencies.&nbsp; Consumers  of the SAM data must first register and obtain a key from the site.&nbsp; The key will allow users to access the SAM  APIs.</p>
+
 <h1>SAM getData API v1</h1>
 <p>The SAM getData API has one operation. The  operation will retrieve an entity&rsquo;s public information. Its endpoint is <a href="https://api.data.gov/sam/v1/registrations/">https://api.data.gov/sam/v1/registrations/</a><br />
   Please note: the rate limits for the API are  currently 5,000 calls per 24 hours and 5 calls per 5 seconds. As we go forward  and understand the impact of usage of the API on SAM, we will adjust the limits  accordingly as well as allow for individual users with specific needs to have  customized rate limits appropriate to their use.</p>
