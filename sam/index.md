@@ -6,6 +6,8 @@ layout: default
 ####Updated on June 26, 2015
 The SAM API has a release of v3 of the standard API and release of v2 of the [search](search.html) API.  The updated field references can be found [here](fields3.html).  Another new page which contains a better overview of the changes can be found in our [Versioning](versioning.html) document.
 
+The latest version of our [Data Dictionary](SAM_Functional_Data_Dictionary_v7_Public.pdf) is available for download which will give a deeper look into the SAM system and how it functions.
+
 ### Overview
 
 The SAM API is a RESTful method of retrieving public information about the businesses or individuals (referred to as "entities") within the SAM data set. The information can currently be retrieved on an entity-by-entity basis. The initial SAM API release was introduced in June 2014 and allowed users of the API to retrievely publicly available entity data. The next iteration of the API, released in fall 2014, provided the ability to [search](search.html) SAM entity data. 
