@@ -25,8 +25,8 @@ script: >
     [ { key: 'dfarId', header: 'DFAR ID'},
       { key: 'dfarDescription', header: 'Description' } ]);
   addCodeTable('../static/discipline.json', 'disc-type',
-    [ { key: 'discId', header: 'DFAR ID'},
-      { key: 'discDescription', header: 'Discipline Description' } ]);
+    [ { key: 'discId', header: 'Discipline Code'},
+      { key: 'discDefinition', header: 'Discipline Description' } ]);
   addCodeTable('../static/empExp.json', 'empExp-type',
     [ { key: 'expId', header: 'Experience Code'},
       { key: 'expDescription', header: 'Employee Experience Definition' } ]);
