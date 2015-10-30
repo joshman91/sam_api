@@ -24,6 +24,16 @@ script: >
   addCodeTable('../static/dfar.json', 'dfar-types',
     [ { key: 'dfarId', header: 'DFAR ID'},
       { key: 'dfarDescription', header: 'Description' } ]);
+  addCodeTable('../static/discipline.json', 'disc-types',
+    [ { key: 'discId', header: 'DFAR ID'},
+      { key: 'discDescription', header: 'Discipline Description' } ]);
+  addCodeTable('../static/empExp.json', 'empExp-type',
+    [ { key: 'expId', header: 'Experience Code'},
+      { key: 'expDescription', header: 'Employee Experience Definition' } ]);
+  addCodeTable('../static/revenue.json', 'revenue-type',
+    [ { key: 'revCode', header: 'Revenue Code'},
+      { key: 'revDescription', header: 'Revenue Definition' } ]);
+
 ---
 <body id="codes">
 
@@ -36,6 +46,9 @@ script: >
 <a href="#countyTypes">County Codes</a></br>
 <a href="#farTypes">ID for FAR Responses</a></br>
 <a href="#dfarTypes">ID for DFAR Responses</a></br>
+<a href="#discipline">Discipline (SF 330 Part II) </a></br>
+<a href="#emplExp">Employee Experience (SF 330 Part II)</a></br>
+<a href="#revenue">Revenue Index (SF 330 Part II)</a></br>
 
 <a name="businessTypes"></a>
 
@@ -173,3 +186,72 @@ Download the JSON for this table <a href="../static/far.json">here</a>
 </body>
 <p>
 Download the JSON for this table <a href="../static/dfar.json">here</a>
+
+<a name="discipline"></a>
+
+<h5>Discipline (SF 330 Part II)</h5>
+<div class="mobile-warning">
+
+              <i class="icon-error-alt"></i> We recommend viewing this table in landscape mode on your mobile device.
+
+            </div>
+<table id="discipline" class="field-table">
+	<colgroup>
+		<col span="1" style="width: 15%;">
+		<col span="1" style="width: 85%;">
+		<!-- <col span="1" style="width: 15.75%;"> -->
+	</colgroup>
+<thead>
+</thead>
+<tbody>
+</tbody>
+</table>
+</body>
+<p>
+Download the JSON for this table <a href="../static/discipline.json">here</a>
+
+<a name="empExp"></a>
+
+<h5>Employee Experience (SF 330 Part II)</h5>
+<div class="mobile-warning">
+
+              <i class="icon-error-alt"></i> We recommend viewing this table in landscape mode on your mobile device.
+
+            </div>
+<table id="empExp" class="field-table">
+	<colgroup>
+		<col span="1" style="width: 15%;">
+		<col span="1" style="width: 85%;">
+		<!-- <col span="1" style="width: 15.75%;"> -->
+	</colgroup>
+<thead>
+</thead>
+<tbody>
+</tbody>
+</table>
+</body>
+<p>
+Download the JSON for this table <a href="../static/empExp.json">here</a>
+
+<a name="revenue"></a>
+
+<h5>Revenue Index (SF 330 Part II)</h5>
+<div class="mobile-warning">
+
+              <i class="icon-error-alt"></i> We recommend viewing this table in landscape mode on your mobile device.
+
+            </div>
+<table id="revenue" class="field-table">
+	<colgroup>
+		<col span="1" style="width: 15%;">
+		<col span="1" style="width: 85%;">
+		<!-- <col span="1" style="width: 15.75%;"> -->
+	</colgroup>
+<thead>
+</thead>
+<tbody>
+</tbody>
+</table>
+</body>
+<p>
+Download the JSON for this table <a href="../static/revenue.json">here</a>
