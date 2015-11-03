@@ -4,7 +4,7 @@ title: API Basics
 nav: basics
 ---
 
-### API basics
+### API basics (New content added below for Modular Options)
 
 The SAM API is a GET API which has one operation. The operation will retrieve an entity's public information. Its endpoint is ```https://api.data.gov/sam/v1/registrations/```. 
 
@@ -32,6 +32,17 @@ In addition to the [search API](http://gsa.github.io/sam_api/sam/search.html), a
 ##### Search API
 
 These are just the first of many steps in modernizing SAM and IAE. In fall 2014, the SAM API consumers added an API to search the SAM database and retrieve registration information specific to their needs. This means, most of the functionality you see on SAM right now to search for entities is available as an API. 
+
+##### Modular Options
+
+In fall 2015, the SAM API consumers enhanced the API to return only responded or all values. The returned API call will search the SAM database and retrieve registration information specific to their needs. 
+
+For example, the API link with an endpoint "?return_values=full" will return all fields, regardless if the field was answered https://api.data.gov/samdata/v4/registrations/0123456780000?return_values=full)
+
+The API link with an endpoint "?return_values=responded" will return all fields, regardless if the field was answered https://api.data.gov/samdata/v4/registrations/0123456780000?return_values=responded
+
+In spring 2016, the SAM API will be further enhanced to include specific module returns. Core Data, Assertions, Reps and Certs, and Points of Contacts are the four main modules a consumer can select to return either all values or responded 
+
 
 <body id="basics"></body>
 
