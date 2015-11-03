@@ -4,7 +4,8 @@ title: API Basics
 nav: basics
 ---
 
-### API basics (New content added below for Modular Options)
+### API basics
+(New content added below for Modular Options)
 
 The SAM API is a GET API which has one operation. The operation will retrieve an entity's public information. Its endpoint is ```https://api.data.gov/sam/v1/registrations/```. 
 
