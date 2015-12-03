@@ -8,6 +8,10 @@
 		"purposeName": "All Awards"
 	},
 	{
+		"purposeCode": "Z3",
+		"purposeName": "IGT Only"
+	},
+	{
 		"purposeCode": "Z4",
 		"purposeName": "Assitance Awards & IGT"
 	},
