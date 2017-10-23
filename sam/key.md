@@ -4,6 +4,8 @@ title: Request an API Key
 nav: key
 ---
 
+Sign up for an application programming interface (API) key to access and use web services available on the Data.gov developer network. Of note, we are transitioning to include an email verification step for API key sign up. All API keys used to access SAM APIs must have a verified email address associated no later than Friday, November 17, 2017. 
+
 {% raw %}
 <div id="apidatagov_signup">Loading signup form...</div>
 <script type="text/javascript">
