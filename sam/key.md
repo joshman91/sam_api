@@ -4,7 +4,7 @@ title: Request an API Key
 nav: key
 ---
 
-Of note, we are transitioning to include an email verification step for API key sign up. All API keys used to access SAM APIs must have a verified email address associated no later than Friday, November 17, 2017. 
+ATTENTION: We are transitioning to include an email verification step for API key sign up. All API keys used to access SAM APIs must have a verified email address associated no later than Friday, November 17, 2017. 
 
 {% raw %}
 <div id="apidatagov_signup">Loading signup form...</div>
