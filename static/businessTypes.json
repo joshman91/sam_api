@@ -60,10 +60,6 @@
     "businessTypeName":"U.S Federal Government"
   },
   {
-    "businessTypeCode":"2R",
-    "businessTypeName":"US Federal Government"
-  },
-  {
     "businessTypeCode":"2U",
     "businessTypeName":"Other Not For Profit Organization"
   },
@@ -234,6 +230,10 @@
   {
     "businessTypeCode":"JT",
     "businessTypeName":"SBA Certified 8(a) Joint Venture"
+  },
+  {
+    "businessTypeCode":"JX",
+    "businessTypeName":"Self Certified HUBZone Joint Venture"
   },
   {
     "businessTypeCode":"KM",
