@@ -9,7 +9,7 @@ nav: basics
 
 The SAM API is a GET API which has one operation. The operation will retrieve an entity's public information. Its endpoint is ```https://api.data.gov/sam/v1/registrations/```. 
 
-The standard rate limits for the SAM APIs are 1,000 calls per API key in a 24 hour-period, 5,000 calls per IP Address in a 24-hour period, and 5 calls per 5 seconds. If you need to have higher, customized rate limits please contact us by creating a new [Support and Feedback](https://github.com/GSA/GSA-APIs/issues) issue. Provide your specific justification and how you will use the SAM APIs. 
+The standard rate limits for the SAM APIs are 1,000 calls per API key in a 24 hour-period, 5,000 calls per IP Address in a 24-hour period, and 5 calls per 5 seconds. If you need to have higher, customized rate limits please submit a request to our supporting Federal Service Desk at [www.fsd.gov](http://www.fsd.gov). Title it "SAM API Rate Limit Increase" and provide the email address you used to create the API Key, your Account ID, your IP Address, and a description of how you use the SAM APIs requiring a higher limit. 
 
 ##### Example URL
 
