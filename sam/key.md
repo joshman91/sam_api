@@ -16,7 +16,8 @@ Sign up for an application programming interface (API) key to access and use web
     exampleApiUrl: 'https://api.data.gov/sam/v1/registrations/1459697830000?api_key={{api_key}}',
     contactUrl: 'https://github.com/GSA/GSA-APIs/issues',
     siteName: 'SAM.gov',
-    emailFromName: 'SAM.gov Developer Hub'
+    emailFromName: 'SAM.gov Developer Hub',
+    verifyEmail: true
   };
 
   /* * * DON'T EDIT BELOW THIS LINE * * */
