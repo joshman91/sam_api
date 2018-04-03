@@ -6,6 +6,8 @@ layout: default
 
 <h1>Updates</h1>
 
+**Updated March 30, 2018.** - We completed our transition to email-verified API keys. If your existing API key no longer works, please submit a new request at [http://gsa.github.io/sam_api/sam/key](http://gsa.github.io/sam_api/sam/key).
+
 **Updated on October 23, 2017.** - Based on usage analysis, we recently modified the rate limits for the SAM APIs. The standard rate limits for the SAM APIs are now 1,000 calls per API key in a 24 hour-period, 5,000 calls per IP Address in a 24-hour period, and 5 calls per 5 seconds. If you need to have higher, customized rate limits, please submita request to our supporting Federal Service Desk at [www.fsd.gov](http://www.fsd.gov). Title it "SAM API Rate Limit Increase" and provide the email address you used to create the API Key, your Account ID, your IP Address, and a description of how you use the SAM APIs requiring a higher limit.
 
 **Updated on October 30, 2015.** - The SAM team is happy to introduce v4 of the standard API and some updates to the v2 of the Search API. The updated field references for v4 can be found [here](fields4.html). We are also announcing that support for v1 and v2 will cease as of this release. We will continue to support only the latest 2 current versions of the API (v3 and V4). That being said, v1 and v2 will still be available for use, but we cannot provide resources for ongoing support as we would like to enhance the system for everyone’s availablilty and not dwell on outdated versions. If there are any questions or issues, please visit the [Support and Feedback](https://github.com/GSA/GSA-APIs/issues) to open a ticket.
