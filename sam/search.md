@@ -230,8 +230,7 @@ than 51 percent of the stock of which is owned by one or more service-disabled v
 
 
 ##### Codes for Purpose of registration
-
-* Z1 - Federal AssistanceAwards   
+Z1 - Federal AssistanceAwards   
 * Z2 - All Awards
 * Z4 - AssistanceAwards & IGT
 * Z5 - All Awards & IGT
@@ -264,7 +263,7 @@ The search results that match the searched condition will be displayed in JSON f
 
 <tr>
 <td valign="bottom" ><p>Status</p></td>
-<td valign="top" ><p>The current status of the registration as it appears in SAM. Options are: Draft, Work In Progress, Submitted, Active, Inactive. </p></td>
+<td valign="top" ><p>The current status of the registration as it appears in SAM. Options are: Work In Progress, Submitted, Active, Inactive. </p></td>
 <td valign="top" ><p>"status":</p></td>
 </tr>
 
