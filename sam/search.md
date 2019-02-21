@@ -230,7 +230,7 @@ than 51 percent of the stock of which is owned by one or more service-disabled v
 
 
 ##### Codes for Purpose of registration
-Z1 - Federal AssistanceAwards   
+* Z1 - Federal Assistance Awards   
 * Z2 - All Awards
 * Z4 - AssistanceAwards & IGT
 * Z5 - All Awards & IGT
@@ -238,9 +238,9 @@ Z1 - Federal AssistanceAwards
 ##### Codes for registration status
 
 * A - Active
-* W - Work in Progress
-* S - Submitted
-* I - Inactive
+* I - Inactive (Expired)
+
+* The SAM Search API only returns entity registrations if they are complete (Active or Expired).
 
 **API Search Output:**
 
