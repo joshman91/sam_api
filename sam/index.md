@@ -9,10 +9,10 @@ layout: default
 SAM only supports the latest 2 versions of the APIs.  The currently supported versions are:
 * GetData V8 (latest version)
 * GetData V7
-* Search V3
+* Search V3 (latest version)
 * Search V2
 
-Legacy versions of the API may be sunset soon. Review the change versioning documentation and migrate your applications to the latest versions of the SAM APIs.
+SAM is removing all deprecated API versions, effective <b>May 1, 2019</b>. Review the change versioning documentation and migrate your applications to the latest versions of the SAM APIs.
 
 **Updated March 14, 2019.** - SAM is releasing updated versions of the GetData API and Search API.  You may view the specific changes on the SAM API Versioning page.  On May 1, 2019, SAM will remove the links for the unsupported API versions (GetData V6 and below, Search V1).  If you have clients using these deprecated API versions, you will need to migrate to the latest versions (GetData V8, Search V3). 
 
