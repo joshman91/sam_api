@@ -7,12 +7,14 @@ layout: default
 <h1>News and Updates</h1>
 
 SAM only supports the latest 2 versions of the APIs.  The currently supported versions are:
-GetData V7 (latest version)
-GetData V6
-Search V2
-Search V1
+* GetData V8 (latest version)
+* GetData V7
+* Search V3
+* Search V2
 
 Legacy versions of the API may be sunset soon. Review the change versioning documentation and migrate your applications to the latest versions of the SAM APIs.
+
+**Updated March 14, 2019.** - SAM is releasing updated versions of the GetData API and Search API.  You may view the specific changes on the SAM API Versioning page.  On May 1, 2019, SAM will remove the links for the unsupported API versions (GetData V6 and below, Search V1).  If you have clients using these deprecated API versions, you will need to migrate to the latest versions (GetData V8, Search V3). 
 
 **Updated February 20, 2019.** - Effective February 1, 2019 SAM APIs will only return registration data which is fully complete. If a registration is in the beginning stages of the registration process and has not been validated by outside data sources such as DLA and IRS, it will not be returned or searchable by API.  This improves data quality and performance by preventing incomplete, possibly incorrect, registrations from the return set.
 

@@ -13,7 +13,7 @@ ATTENTION: We have transitioned to include an email verification step for SAM Ap
   var apiUmbrellaSignupOptions = {
     registrationSource: 'gsa-sam',
     apiKey: '2cnHYrvWoVvKnV7BahvMvxOWa8z4RHx9K7MtkS5G',
-    exampleApiUrl: 'https://api.data.gov/sam/v1/registrations/1459697830000?api_key={{api_key}}',
+    exampleApiUrl: 'https://api.data.gov/sam/v8/registrations/1459697830000?api_key={{api_key}}',
     contactUrl: 'https://github.com/GSA/GSA-APIs/issues',
     siteName: 'SAM.gov',
     emailFromName: 'SAM.gov Developer Hub',

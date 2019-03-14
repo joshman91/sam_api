@@ -7,16 +7,24 @@ nav: versioning
 <p>SAM API  Versioning<br />
   </p>
 
-<h1>SAM getData API</h1>
+<h1>SAM GetData API</h1>
 <p>The SAM GetData API has one operation. The  operation will retrieve an entity&rsquo;s public information. Its endpoint is <a href="https://api.data.gov/sam/v7/registrations/">https://api.data.gov/sam/v7/registrations/</a><br />
 The standard rate limits for the SAM APIs are now 1,000 calls per API key in a 24 hour-period, 5,000 calls per IP Address in a 24-hour period, and 5 calls per 5 seconds. If you need a higher amount or customized rate limits, please submit a request to our supporting Federal Service Desk at fsd.gov.  Title it "SAM API Rate Limit Increase" and provide the email address used to create the API Key, your Account ID, your IP Address, and a description/explanation of how you will use the requested SAM API limit increase. (http://www.fsd.gov). 
 	
 <p>Note: SAM only provides support for the latest 2 versions of the GetData API.  Legacy versions of the GetData API (versions 6 and below) may be sunset soon.  Please migrate to the latest versions of the SAM GetData API.</p>
 
+<h2>Version 8 (v8)</h2>
+<p>The following updates have been applied:</p>
+<ul>
+  <li>Updated the data element tag "hasDelinquentFederalDebt" to "debtSubjectToOffset" to remain consistent with the SAM application, including the application front end and the Entity Management web service. </li>
+  <li>Added a new section, "federalAssistanceCertifications", to reflect SAM registrants’ compliance with 2CFR 200.208 Certifications and Representations.</li>
+</ul> 
+
+
 <h2>Version 7 (v7)</h2>
 <p>The following updates have been applied:</p>
 <ul>
-  <li>Updated SAM API to return ‘true’ for "hasKnownExclusion" if the entity registration has an active exclusion, and ‘false’ if the entity registration does not have an active exclusion. </li>
+  <li>Updated SAM API to return "true" for "hasKnownExclusion" if the entity registration has an active exclusion, and ‘false’ if the entity registration does not have an active exclusion. </li>
   <ul>
     <li>Refer to Appendix A for sample data and JSON tag result.</li></ul>
 <li>Removed old, outdated Business Types from the Central Contractor Registration (CCR) system from API business type string.</li>
@@ -177,19 +185,14 @@ The standard rate limits for the SAM APIs are now 1,000 calls per API key in a 2
 <h1>SAM Search API</h1>
 <p>The SAM Search API has been developed to  mimic the Search functionality that is currently available from the SAM  website. The Search API provides the opportunity to perform a search  transaction in the following two options. Quick Search takes a single search  term provided by the user and compares it to a set of predefined database  fields. Advanced Search allows the user to search by entering a value that is  then used to search a user selected predefined search category. <br />
   Notice that the searchData is through a  JSON-based &ldquo;hypermedia as the engine of application state&rdquo; (HATEOAS with the  appropriate links object within the result set). The intent going forward will  be to use this model to allow for a scalable architecture of IAE&rsquo;s APIs to be  built. </p>
-<h2>Version 1 (v1)</h2>
+
+<h2>Version 3 (v3)</h2>
 <p>The following updates have been applied:</p>
-<ul>
-  <li>Added Advanced  Search features which allows users to search by specific fields</li>
-  <ul>
-    <li>Fields  added to the Advanced Search include:</li>
-    <ul>
-      <li>legalBusinessName,  status, duns, dunsPlus4, hasKnownExclusion, expirationDate, samAddress, cage,  dodaac, hasDelinquentFederalDebt</li>
-    </ul>
-  </ul>
-</ul>
+<ul>   
+<li>Updated the data element tag "hasDelinquentFederalDebt" to "debtSubjectToOffset" to remain consistent with the SAM application, including the application front end and the Entity Management web service. </li>
+</ul>  
+  
 <h2>Version 2 (v2)</h2>
-<p>Deployed June 27, 2015</p>
 <p>The following updates have been applied:</p>
 <ul>
   <li>Added ability to  check companies that were added/updated /expired between 2 dates
@@ -203,4 +206,15 @@ The standard rate limits for the SAM APIs are now 1,000 calls per API key in a 2
       </li>
     </ul>
   </li>
+  </ul> 
+<h2>Version 1 (v1)</h2>
+<p>The following updates have been applied:</p>
+<ul>
+  <li>Added Advanced  Search features which allows users to search by specific fields</li>
+  <ul>
+    <li>Fields  added to the Advanced Search include:</li>
+    <ul>
+      <li>legalBusinessName,  status, duns, dunsPlus4, hasKnownExclusion, expirationDate, samAddress, cage,  dodaac, hasDelinquentFederalDebt</li>
+    </ul>
   </ul>
+</ul>
