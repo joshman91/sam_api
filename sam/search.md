@@ -19,7 +19,7 @@ Note:  Don’t try to construct links yourself based on the patterns you see in 
 
 The Quick Search functionality allows a user to enter a single term which is then queried against six fields in the SAM database. The results should return the same entities, grantees, and other registrants in SAM that are found when you do a “Quick Search” on SAM itself.
 
-Example: [https://api.data.gov/sam/v1/registrations?qterms=GSA&api_key=DEMO_KEY](https://api.data.gov/sam/v1/registrations?qterms=GSA&api_key=DEMO_KEY)
+Example: [https://api.data.gov/sam/v3/registrations?qterms=GSA&api_key=DEMO_KEY](https://api.data.gov/sam/v3/registrations?qterms=GSA&api_key=DEMO_KEY)
 The Search API will then query the SAM database and display any registrant that matches the user selected search term contained in any of the following fields: 
 
 
@@ -42,11 +42,11 @@ The Advanced Search functionality allows a user to enter criteria or a value and
 Advanced Search uses the same qterms construct that we used for quick search, but follows more closely to the Lucene-based syntax for querying by specific terms. It is not exactly the same, but should be familiar for anyone who is used to that syntax.
 
 As a basic example, if you want to make sure you’re searching only Legal Business Name, you can run the following search:
-```https://api.data.gov/sam/v1/registrations?qterms=legalBusinessName:incorporated```
+```https://api.data.gov/sam/v3/registrations?qterms=legalBusinessName:incorporated```
 
 The search terms will be in parentheses. You can group AND and OR search terms together by putting the terms AND or OR between terms, separated by + signs.
 For example a user can search for an entity that has a Legal Business Name that includes the term “incorporated” AND has selected the NAICS Code of 123456 for which they are considered to be a Small Business for. 
-```https://api.data.gov/sam/v1/registrations?qterms=(legalBusinessName:incorporated)+AND+(naicsLimitedSB:12345)```
+```https://api.data.gov/sam/v3/registrations?qterms=(legalBusinessName:incorporated)+AND+(naicsLimitedSB:12345)```
 
 ##### Advanced search results fields
 
@@ -312,9 +312,9 @@ The search results that match the searched condition will be displayed in JSON f
 </tr>
 
 <tr>
-<td valign="bottom" ><p>Delinquent Federal Debt Indicator</p></td>
+<td valign="bottom" ><p>Debt Subject to Offset Indicator</p></td>
 <td valign="top" ><p>True or False value based on whether the Department of Treasury has indicated the entity has Delinquent Federal Debt or not.</p></td>
-<td valign="top" ><p>"hasDelinquentFederalDebt":</p></td>
+<td valign="top" ><p>"debtSubjectToOffset":</p></td>
 </tr>
 
 </tbody>
@@ -338,13 +338,13 @@ The search results that match the searched condition will be displayed in JSON f
     "duns":"123456789",
     "links":[
        { "rel":"details",
-         "href":"http://api.data.gov/samdata/v1/registrations/1234567890000"}],
+         "href":"http://api.data.gov/samdata/v3/registrations/1234567890000"}],
     "dunsPlus4":"0000",
     "legalBusinessName":"Sample Company LLC",
     "cage":"12345"}],
     "links":[
        { "rel" : "self",
-         "href": "http://api.data.gov/samsearch/v1/registrations?qterms=123456789&start=1&length=10"}]}
+         "href": "http://api.data.gov/samsearch/v3/registrations?qterms=123456789&start=1&length=10"}]}
 </pre>
 
 **Pagination**
@@ -354,18 +354,18 @@ The results will be defaulted to 10 records per JSON page. An API developer can 
 <pre>
 "links":[
   {"rel": "self",
-   "href":"http://api.data.gov/sam/v1/registrations?qterms=gsa&start=11&length=10"},
+   "href":"http://api.data.gov/sam/v3/registrations?qterms=gsa&start=11&length=10"},
   {"rel": "prev",
-   "href": "http://api.data.gov/sam/v1/registrations?qterms=gsa&start=1&length=10"},
+   "href": "http://api.data.gov/sam/v3/registrations?qterms=gsa&start=1&length=10"},
   {"rel": "first",
-   "href": "http://api.data.gov/sam/v1/registrations?qterms=gsa&start=1&length=10"},
+   "href": "http://api.data.gov/sam/v3/registrations?qterms=gsa&start=1&length=10"},
   {"rel": "next",
-   "href": "http://api.data.gov/sam/v1/registrations?qterms=gsa&start=21&length=10"}
+   "href": "http://api.data.gov/sam/v3/registrations?qterms=gsa&start=21&length=10"}
 </pre>
 
 An API developer can change the first record of the page and the number of records returned on the page by manipulating the start and length parameters at the end of the API search URL like so:
 
-* [http://api.data.gov/sam/v1/registrations?qterms=gsa&start=1&length=25](http://api.data.gov/sam/v1/registrations?qterms=gsa&start=1&length=25)  
+* [http://api.data.gov/sam/v3/registrations?qterms=gsa&start=1&length=25](http://api.data.gov/sam/v3/registrations?qterms=gsa&start=1&length=25)  
 * 
 
 Note: The maximium page size is 500. If more than 500 entities are requested, the API will only return 500 per page without error.
@@ -374,16 +374,16 @@ Note: The maximium page size is 500. If more than 500 entities are requested, th
 
 Plus signs '+’ should be used as spaces between terms. ‘+AND+’ and ‘+OR+’ are always used to join two terms like a boolean AND and OR.
 
-* [https://api.data.gov/sam/v1/registrations?qterms=legalBusinessName:University+of+Pongo](https://api.data.gov/sam/v1/registrations?qterms=legalBusinessName:University+of+Pongo&api_key=DEMO_KEY)  
-* [https://api.data.gov/sam/v1/registrations?qterms=disasterResponse:true+AND+samAddress.stateOrProvince:CO](https://api.data.gov/sam/v1/registrations?qterms=disasterResponse:true+AND+samAddress.stateOrProvince:CO&api_key=DEMO_KEY)  
-* [https://api.data.gov/sam/v1/registrations?qterms=naicsAnySize:111411+AND+samAddress.stateOrProvince:XY+AND+legalBusinessName:Test+AND+minorityOwned:true](https://api.data.gov/sam/v1/registrations?qterms=naicsAnySize:111411+AND+samAddress.stateOrProvince:XY+AND+legalBusinessName:Test+AND+minorityOwned:true&api_key=DEMO_KEY)  
+* [https://api.data.gov/sam/v3/registrations?qterms=legalBusinessName:University+of+Pongo](https://api.data.gov/sam/v3/registrations?qterms=legalBusinessName:University+of+Pongo&api_key=DEMO_KEY)  
+* [https://api.data.gov/sam/v3/registrations?qterms=disasterResponse:true+AND+samAddress.stateOrProvince:CO](https://api.data.gov/sam/v3/registrations?qterms=disasterResponse:true+AND+samAddress.stateOrProvince:CO&api_key=DEMO_KEY)  
+* [https://api.data.gov/sam/v3/registrations?qterms=naicsAnySize:111411+AND+samAddress.stateOrProvince:XY+AND+legalBusinessName:Test+AND+minorityOwned:true](https://api.data.gov/sam/v3/registrations?qterms=naicsAnySize:111411+AND+samAddress.stateOrProvince:XY+AND+legalBusinessName:Test+AND+minorityOwned:true&api_key=DEMO_KEY)  
 
 Note: If your search term contains the word(s) ‘and’ or ‘or’, you must not capitalize it.
 
 Example:
 
-* [https://api.data.gov/sam/v1/registrations?qterms=legalBusinessName:Snow or Sleet Removal Company](https://api.data.gov/sam/v1/registrations?qterms=legalBusinessName:Snow or Sleet Removal Company&api_key=DEMO_KEY)  
-* [https://api.data.gov/sam/v1/registrations?qterms=legalBusinessName:Rain or Shine Rentals](https://api.data.gov/sam/v1/registrations?qterms=legalBusinessName:Rain or Shine Rentals&api_key=DEMO_KEY)  
+* [https://api.data.gov/sam/v3/registrations?qterms=legalBusinessName:Snow or Sleet Removal Company](https://api.data.gov/sam/v3/registrations?qterms=legalBusinessName:Snow or Sleet Removal Company&api_key=DEMO_KEY)  
+* [https://api.data.gov/sam/v3/registrations?qterms=legalBusinessName:Rain or Shine Rentals](https://api.data.gov/sam/v3/registrations?qterms=legalBusinessName:Rain or Shine Rentals&api_key=DEMO_KEY)  
 
 ##### Grouping Search Terms
 
@@ -391,21 +391,21 @@ Terms can be grouped against the same API advanced search field by using commas 
 
 Examples:
 
-* [https://api.data.gov/sam/v1/registrations?qterms=samAddress.zip:(11111,22222,33333)](https://api.data.gov/sam/v1/registrations?qterms=samAddress.zip:(11111,22222,33333)&api_key=DEMO_KEY)  
-* [https://api.data.gov/sam/v1/registrations?qterms=congressionalDistrict:(AK-00,AS-98,AZ-06)](https://api.data.gov/sam/v1/registrations?qterms=congressionalDistrict:(AK-00,AS-98,AZ-06)&api_key=DEMO_KEY)  
-* [https://api.data.gov/sam/v1/registrations?qterms=womanOwned:true+AND+naicsLimitedSB:(111333,111991,111331)](https://api.data.gov/sam/v1/registrations?qterms=womanOwned:true+AND+naicsLimitedSB:(111333,111991,111331)&api_key=DEMO_KEY)  
+* [https://api.data.gov/sam/v3/registrations?qterms=samAddress.zip:(11111,22222,33333)](https://api.data.gov/sam/v3/registrations?qterms=samAddress.zip:(11111,22222,33333)&api_key=DEMO_KEY)  
+* [https://api.data.gov/sam/v3/registrations?qterms=congressionalDistrict:(AK-00,AS-98,AZ-06)](https://api.data.gov/sam/v3/registrations?qterms=congressionalDistrict:(AK-00,AS-98,AZ-06)&api_key=DEMO_KEY)  
+* [https://api.data.gov/sam/v3/registrations?qterms=womanOwned:true+AND+naicsLimitedSB:(111333,111991,111331)](https://api.data.gov/sam/v3/registrations?qterms=womanOwned:true+AND+naicsLimitedSB:(111333,111991,111331)&api_key=DEMO_KEY)  
 
 Note: For terms having the first character as alpha, you must insert a + symbol after each comma (exception is samAddress.country).
 
 Examples:
 
-* [https://api.data.gov/sam/v1/registrations?qterms=legalBusinessName:(wood,+moore,+general,+temme,+whitney)&api_key=DEMO_KEY]()
-* [https://api.data.gov/sam/v1/registrations?qterms=samAddress.city:(Moscow,+Oslo,+Geneva)&api_key=DEMO_KEY]()
-* [https://api.data.gov/sam/v1/registrations?qterms=naicsAnySize:(111332,336413)+AND+samAddress.city:(Napa,+Loire)&api_key=DEMO_KEY]()
+* [https://api.data.gov/sam/v3/registrations?qterms=legalBusinessName:(wood,+moore,+general,+temme,+whitney)&api_key=DEMO_KEY]()
+* [https://api.data.gov/sam/v3/registrations?qterms=samAddress.city:(Moscow,+Oslo,+Geneva)&api_key=DEMO_KEY]()
+* [https://api.data.gov/sam/v3/registrations?qterms=naicsAnySize:(111332,336413)+AND+samAddress.city:(Napa,+Loire)&api_key=DEMO_KEY]()
 
 Exception: 
   
-* [https://api.data.gov/sam/v1/registrations?qterms=samAddress.country:(ALB,BLZ,CHL)&api_key=DEMO_KEY](https://api.data.gov/sam/v1/registrations?qterms=samAddress.country:(ALB,BLZ,CHL)&api_key=DEMO_KEY)
+* [https://api.data.gov/sam/v3/registrations?qterms=samAddress.country:(ALB,BLZ,CHL)&api_key=DEMO_KEY](https://api.data.gov/sam/v3/registrations?qterms=samAddress.country:(ALB,BLZ,CHL)&api_key=DEMO_KEY)
 
 
 ##### TIPS/HINTS
