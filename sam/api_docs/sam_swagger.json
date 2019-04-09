@@ -1,64 +1,83 @@
 {
-	"apiVersion": "1.0.0"
-	"swaggerVersion": "1.2",
-	"basePath": "https://api.data.gov/sam/v1"
-	"resourcePath": "/registrations",
-	"produces": ["application/json"],
-	"apis": [{
-		"path": "/registrations/{registrationId}",
-		"description": "Operations about entity registrations",
-		"operations": [{
-			"method": "GET",
-			"nickname": "getData",
-			"type": "SamRegistration",
-			"parameters": [{
-				"paramType": "path",
-				"name": "registrationId",
-				"description": "DUNS+4 number (no '-' sign) of the registration to be fetched",
-				"dataType": "string",
-				"required": "true"
-			},
-			{
-				"paramType": "query",
-				"name": "api_key",
-				"description": "An API Key from api.data.gov",
-				"dataType": "string",
-				"required": "false"
-			}],
-			"summary": "Find a registration by its DUN+4 number",
-			"notes": "If the entity only has a 9-digit DUNS number, pad the end to include 4 zeros",
-			"responseMessages": [{
-				"code": "200",
-				"message": "Ok",
-				"responseModel": "registrationType"
-			},
-			{
-				"code": "403",
-				"message": "Request for registration information forbidden"
-			},
-			{
-				"code": "404",
-				"message": "The registration could not be found"
-			},
-			{
-				"code": "406",
-				"message": "Duns number must be 13 digit long"
-			},
-			{
-				"code": "500",
-				"message": "Internal error"
-			}]
-		}]
-	}],
-	"models": {
+	"swagger": "2.0",
+	"info": {
+		"version": "1.0.0",
+		"title": "sam_api_getData"
+	},
+	"host": "api.data.gov",
+	"basePath": "/sam",
+	"schemes": [
+		"https"
+	],
+	"paths": {
+		"/v8/registrations/{registrationId}": {
+			"get": {
+				"description": "Operations about entity registrations",
+				"operationId": "getData",
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "registrationId",
+						"description": "DUNS+4 number (no '-' sign) of the registration to be fetched",
+						"type": "string",
+						"required": true
+					},
+					{
+						"in": "query",
+						"name": "api_key",
+						"description": "An API Key from api.data.gov",
+						"type": "string",
+						"required": true
+					}
+				],
+				"summary": "Find a registration by its DUN+4 number. If the entity only has a 9-digit DUNS number, pad the end to include 4 zeros.",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"$ref": "#/definitions/SamRegistration"
+						}
+					},
+					"403": {
+						"description": "Request for registration information forbidden"
+					},
+					"404": {
+						"description": "The registration could not be found"
+					},
+					"406": {
+						"description": "Duns number must be 13 digit long"
+					},
+					"500": {
+						"description": "Internal error"
+					}
+				}
+			}
+		}
+	},
+	"definitions": {
 		"SamRegistration": {
-			"id": "SAM Registration",
 			"description": "A partial representation of a SAM registration",
+			"required": [
+			        "duns",
+				"purposeOfRegistration",
+				"registrationDate",
+				"expirationDate",
+				"activationDate",
+				"lastUpdatedDate",
+				"legalBusinessName",
+				"corporateUrl",
+				"corporateStructureCode",
+				"mailingAddress",
+				"status",
+				"businessTypes"
+			],
 			"type": "object",
 			"properties": {
 				"duns": {
-					"type": "string",
-					"required": true
+					"type": "string"
 				},
 				"duns4": {
 					"type": "string"
@@ -78,28 +97,26 @@
 					"IGT_FEDERAL_ASSISTANCE",
 					"IGT_ALL_AWARDS",
 					"FEDERAL_ASSISTANCE",
-					"ALL_AWARDS"],
-					"required": true
+					"ALL_AWARDS"]
 				},
 				"registrationDate": {
-					"type": "date",
-					"required": true
+					"type": "string",
+					"format": "date-time"
 				},
 				"expirationDate": {
-					"type": "date",
-					"required": true
+					"type": "string",
+					"format": "date-time"
 				},
 				"activationDate": {
-					"type": "date",
-					"required": true
+					"type": "string",
+					"format": "date-time"
 				},
 				"lastUpdatedDate": {
-					"type": "date",
-					"required": true
+					"type": "string",
+					"format": "date-time"
 				},
 				"legalBusinessName": {
-					"type": "string",
-					"required": true
+					"type": "string"
 				},
 				"doingBusinessAsName": {
 					"type": "string"
@@ -117,33 +134,33 @@
 					"type": "string"
 				},
 				"businessStartDate": {
-					"type": "date"
+					"type": "string",
+					"format": "date-time"
 				},
 				"fiscalYearCloseDay": {
 					"type": "string"
 				},
 				"corporateUrl": {
-					"type": "string",
-					"required": true
+					"type": "string"
 				},
 				"corporateStructureCode": {
 					"type": "string",
-					"enum": ["2J",
-					"2K",
-					"2L",
-					"8H",
-					"2A",
-					"CY",
-					"X6",
-					"ZZ"],
-					"required": true
+					"enum": [
+						"2J",
+						"2K",
+						"2L",
+						"8H",
+						"2A",
+						"CY",
+						"X6",
+						"ZZ"
+					]
 				},
 				"corporateStructureDescription": {
 					"type": "string"
 				},
 				"mailingAddress": {
-					"$ref": "#/definitions/SamAddress",
-					"required": "true"
+					"$ref": "#/definitions/SamAddress"
 				},
 				"stateOfIncorporation": {
 					"type": "string"
@@ -180,17 +197,19 @@
 				},
 				"correspondenceFlag": {
 					"type": "string",
-					"enum": ["M",
-					"F",
-					"E"]
+					"enum": [
+						"M",
+						"F",
+						"E"
+					]
 				},
 				"status": {
 					"type": "string",
 					"enum": [
-					"ACTIVE",
-					"EXPIRED",
-					"WIP"],
-					"required": true
+						"ACTIVE",
+						"EXPIRED",
+						"WIP"
+					]
 				},
 				"statusMessage": {
 					"type": "string"
@@ -199,11 +218,11 @@
 					"type": "array",
 					"items": {
 						"type": "string"
-					},
-					"required": true
+					}
 				},
 				"sbaCertificationExpirationDate": {
-					"type": "date"
+					"type": "string",
+					"format": "date-time"
 				},
 				"disasterRelief": {
 					"type": "array",
@@ -226,10 +245,12 @@
 					"type": "array",
 					"items": {
 						"type": "object",
+						"required": [
+							"pscCode"
+						],
 						"properties": {
 							"pscCode": {
-								"type": "string",
-								"required": true
+								"type": "string"
 							},
 							"pscName": {
 								"type": "string"
@@ -239,28 +260,34 @@
 							},
 							"smallBusinessIndicator": {
 								"type": "string",
-								"enum": ["Y",
-								"N",
-								"E"]
+								"enum": [
+									"Y",
+									"N",
+									"E"
+								]
 							}
 						}
 					}
 				},
 				"certifications": {
 					"type": "object",
+					"required": [
+						"pdfUrl"
+					],
 					"properties": {
 						"pdfUrl": {
-							"type": "string",
-							"required": true
+							"type": "string"
 						}
 					}
 				},
 				"qualifications": {
 					"type": "object",
+					"required": [
+						"pdfUrl"
+					],
 					"properties": {
 						"pdfUrl": {
-							"type": "string",
-							"required": true
+							"type": "string"
 						}
 					}
 				}
@@ -269,14 +296,17 @@
 		"SamPointOfContact": {
 			"description": "A representation of a point of contact in SAM",
 			"type": "object",
+			"required": [
+				"firstName",
+				"lastName",
+				"email"
+			],
 			"properties": {
 				"firstName": {
-					"type": "string",
-					"required": true
+					"type": "string"
 				},
 				"lastName": {
-					"type": "string",
-					"required": true
+					"type": "string"
 				},
 				"middleInitial": {
 					"type": "string"
@@ -297,25 +327,27 @@
 					"type": "string"
 				},
 				"email": {
-					"type": "string",
-					"required": true
+					"type": "string"
 				}
 			}
 		},
 		"SamAddress": {
 			"description": "A representation of an address in SAM",
 			"type": "object",
+			"required": [
+				"line1",
+				"city",
+				"countryCode"
+			],
 			"properties": {
 				"line1": {
-					"type": "string",
-					"required": true
+					"type": "string"
 				},
 				"line2": {
 					"type": "string"
 				},
 				"city": {
-					"type": "string",
-					"required": true
+					"type": "string"
 				},
 				"stateOrProvince": {
 					"type": "string"
@@ -327,8 +359,7 @@
 					"type": "string"
 				},
 				"countryCode": {
-					"type": "string",
-					"required": true
+					"type": "string"
 				}
 			}
 		}
